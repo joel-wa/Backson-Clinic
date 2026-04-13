@@ -1,0 +1,37 @@
+{
+  "title": "Consulting Clinic Questionnaire Response",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "consulting_area": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "urgency": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    }
+  },
+  "required": [
+    "client_name",
+    "email",
+    "consulting_area",
+    "description"
+  ]
+}
