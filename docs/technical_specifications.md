@@ -300,7 +300,8 @@ function buildBookingMessage(booking: BookingDetails): string {
     `• Data: ${booking.date}\n` +
     `• Hora: ${booking.time}\n` +
     `• Nome: ${booking.patientName}\n` +
-    `• Telefone: ${booking.patientPhone}`
+    `• Telefone: ${booking.patientPhone}\n` +
+    (booking.notes ? `• Notas: ${booking.notes}` : "")
   );
 }
 
