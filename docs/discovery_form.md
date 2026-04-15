@@ -1,14 +1,1 @@
-# Discovery Form: Clínica Beckson
-
-## Project Overview
-- **Project Name:** Website for Clínica Beckson
-- **Purpose:** Attract new patients, provide service information, and facilitate appointment booking via WhatsApp.
-- **Language:** Portuguese.
-- **Location:** Namibe, Angola.
-
-## Requirements
-- **Design:** Modern.
-- **Primary CTA:** WhatsApp click-to-chat.
-- **Price Visibility:** Disabled (Services page should not show prices).
-- **Due Date:** April 16, 2026.
-- **Scope:** 4 pages (Home, Services, Contact, Testimonials).
+Discovery Form – Clinic Website Please fill in all sections as clearly as possible. This will help us build a site that truly meets your needs and avoids delays. 1. Website Objective- Attract new patients- Provide information about the clinic- Allow appointment booking How will success be measured after 3 months? 2. Users Who will use the website?- New patients- Existing patients What do users want to do on the site?- Book appointments- View services- Find contact/location- Ask questions 3. Pages and Content- Home page- Services- Contact- Testimonials Do you already have content? No 4. Clinic Information Clinic name: Clínica Beckson Address: Namibe – Angola, Tombwa, Rua Che Guevara Phone: +244 930 225 181 WhatsApp: +244 930 225 191 Emails: clinicabeckson@gmail.com, consultoriobeckson@gmail.com Opening hours: Monday to Friday: 07:30 – 19:00 Saturday: 08:00 – 17:00 6. Communication Contact methods:- Phone- WhatsApp Messages sent to:- WhatsApp 7. Services and Prices Show services: Yes Show prices: No Prices change frequently: No 8. Language Portuguese 9. Design Preferences Style: Modern Logo and colors: Yes
