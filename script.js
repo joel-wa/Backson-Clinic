@@ -3,6 +3,13 @@ const WHATSAPP_NUMBER = "244930225191";
 const defaultMessage =
   "Olá, Clínica Backson. Gostaria de pedir informações sobre consultas.";
 
+const stepTitles = {
+  1: "Selecione o serviço",
+  2: "Escolha data e hora",
+  3: "Preencha os seus dados",
+  4: "Reveja e confirme",
+};
+
 const bookingState = {
   step: 1,
   service: "",
@@ -21,6 +28,8 @@ const confirmLink = document.querySelector("#whatsapp-confirm");
 const dateInput = document.querySelector("#appointment-date");
 const menuToggle = document.querySelector(".menu-toggle");
 const primaryNav = document.querySelector("#primary-nav");
+const stepTitle = document.querySelector("[data-step-title]");
+const currentStepLabel = document.querySelector("[data-current-step]");
 
 function buildWhatsAppUrl(text) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -46,10 +55,6 @@ function setInitialDate() {
   dateInput.min = localDateValue(today);
   dateInput.value = localDateValue(tomorrow);
   bookingState.date = dateInput.value;
-}
-
-function selectedServiceInput() {
-  return form?.querySelector('input[name="service"]:checked');
 }
 
 function formatDate(dateValue) {
@@ -161,6 +166,9 @@ function updateWizard() {
     step.classList.toggle("is-complete", stepNumber < bookingState.step);
   });
 
+  if (stepTitle) stepTitle.textContent = stepTitles[bookingState.step];
+  if (currentStepLabel) currentStepLabel.textContent = String(bookingState.step);
+
   if (prevButton) {
     prevButton.style.visibility = bookingState.step === 1 ? "hidden" : "visible";
   }
@@ -176,10 +184,23 @@ function updateWizard() {
   }
 }
 
-function goToStep(step) {
+function goToStep(step, shouldScroll = true) {
   bookingState.step = Math.min(Math.max(step, 1), 4);
   updateWizard();
-  form?.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (shouldScroll) {
+    form?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function selectService(service) {
+  if (!form || !service) return;
+  const options = Array.from(form.querySelectorAll('input[name="service"]'));
+  const input = options.find((option) => option.value === service);
+  if (input) {
+    input.checked = true;
+    bookingState.service = service;
+    showMessage("");
+  }
 }
 
 function bindWizard() {
@@ -213,14 +234,8 @@ function bindWizard() {
 
   document.querySelectorAll("[data-book-service]").forEach((link) => {
     link.addEventListener("click", () => {
-      const service = link.dataset.bookService;
-      const input = form.querySelector(`input[name="service"][value="${CSS.escape(service)}"]`);
-      if (input) {
-        input.checked = true;
-        bookingState.service = service;
-        bookingState.step = 1;
-        updateWizard();
-      }
+      selectService(link.dataset.bookService);
+      goToStep(1, false);
     });
   });
 }
@@ -254,9 +269,61 @@ function bindHeaderState() {
   window.addEventListener("scroll", setScrolled, { passive: true });
 }
 
+function bindReveal() {
+  const nodes = document.querySelectorAll(".reveal");
+  if (!nodes.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    nodes.forEach((node) => node.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  nodes.forEach((node) => observer.observe(node));
+}
+
+function bindActiveNav() {
+  const navLinks = Array.from(document.querySelectorAll(".primary-nav a"));
+  const sections = navLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  if (!sections.length || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.target.id}`);
+      });
+    },
+    { threshold: [0.18, 0.35, 0.6], rootMargin: "-20% 0px -55% 0px" }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
 setDefaultWhatsAppLinks();
 setInitialDate();
 bindWizard();
 bindMobileNav();
 bindHeaderState();
+bindReveal();
+bindActiveNav();
 updateWizard();

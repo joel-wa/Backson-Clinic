@@ -1,15 +1,16 @@
 # Clínica Backson Website
 
-Static Portuguese website for Clínica Backson in Tombwa, Namibe, Angola. The site uses the Stitch design direction from `stitch_cl_nica_backson_digital_platform/`, the clinic details from `docs/`, and local assets for the logo and hero image.
+Static Portuguese website for Clínica Backson in Tombwa, Namibe, Angola. The site uses the Stitch design direction from `stitch_cl_nica_backson_digital_platform/`, the clinic details from `docs/`, and a custom visual set for the hero and service cards.
 
 ## What is included
 
 - `index.html` - one-page clinic website with hero, services, booking, contact, trust, and footer sections.
-- `styles.css` - responsive design system based on the Backson green palette.
-- `script.js` - mobile navigation, appointment wizard, and WhatsApp deep-link generation.
+- `styles.css` - responsive premium clinic design system based on the Backson green palette.
+- `script.js` - mobile navigation, reveal states, active nav, appointment wizard, and WhatsApp deep-link generation.
 - `assets/backson-logo-transparent.png` - transparent-background logo derived from the provided JPG.
-- `assets/hero-clinic.png` - generated clinic reception hero image for the landing section.
-- `schema/site-content.json` - structured clinic content and booking message template.
+- `assets/hero-clinic-v2.png` - generated premium clinic reception hero image for the landing section.
+- `assets/service-*.png` - generated, coherent service-card image set.
+- `schema/site-content.json` - structured clinic content, visual asset map, and booking message template.
 
 ## Run locally
 

@@ -11,9 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="assets/hero-clinic-v2.png" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
@@ -27,6 +28,11 @@
           <img src="assets/backson-logo-transparent.png" alt="Clínica Backson" />
         </a>
 
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="sr-only">Abrir menu</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
+
         <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
           <a href="#inicio">Início</a>
           <a href="#servicos">Serviços</a>
@@ -36,83 +42,91 @@
         </nav>
 
         <div class="header-actions">
+          <span class="header-status" aria-label="Horário de atendimento">
+            <span></span>
+            Seg-Sex 07:30-19:00
+          </span>
           <a class="button button--primary nav-cta" href="#marcar">
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 2v3M16 2v3M3.5 9.5h17M6 5h12a2.5 2.5 0 0 1 2.5 2.5v10A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5v-10A2.5 2.5 0 0 1 6 5Z" /></svg>
             Marcar Consulta
           </a>
-          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-            <span class="sr-only">Abrir menu</span>
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
-          </button>
         </div>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true"></div>
-        <div class="container hero-content">
-          <img class="hero-logo" src="assets/backson-logo-transparent.png" alt="Clínica Backson" />
-          <p class="eyebrow">Saúde de proximidade em Tombwa, Namibe</p>
-          <h1 id="hero-title">Clínica Backson</h1>
-          <p class="hero-copy">
-            Cuidar de você é a nossa missão. Atendimento médico humanizado, comunicação rápida por
-            WhatsApp e uma equipa pronta para acompanhar pacientes novos e existentes.
-          </p>
-          <div class="hero-actions">
-            <a class="button button--primary button--large" href="#marcar">
-              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 2v3M16 2v3M3.5 9.5h17M6 5h12a2.5 2.5 0 0 1 2.5 2.5v10A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5v-10A2.5 2.5 0 0 1 6 5Z" /></svg>
-              Marcar Consulta
-            </a>
-            <a class="button button--secondary button--large" href="#servicos">
-              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-              Ver Serviços
-            </a>
+      <section class="hero section-anchor" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy-block reveal">
+            <p class="eyebrow">Tombwa, Namibe - Angola</p>
+            <h1 id="hero-title">Clínica Backson</h1>
+            <p class="hero-lede">
+              Cuidar de você é a nossa missão. Atendimento médico próximo, organizado e humano
+              para pacientes que procuram clareza, confiança e resposta rápida.
+            </p>
+            <div class="hero-actions">
+              <a class="button button--primary button--large" href="#marcar">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 2v3M16 2v3M3.5 9.5h17M6 5h12a2.5 2.5 0 0 1 2.5 2.5v10A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5v-10A2.5 2.5 0 0 1 6 5Z" /></svg>
+                Marcar Consulta
+              </a>
+              <a class="button button--secondary button--large" data-whatsapp-default href="https://wa.me/244930225191" target="_blank" rel="noopener">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5Z" /><path d="M8.8 8.8c.2 3.1 2.3 5.2 5.4 5.4l1.4-1.4" /></svg>
+                Falar no WhatsApp
+              </a>
+            </div>
           </div>
-          <dl class="hero-facts" aria-label="Informações rápidas da clínica">
-            <div>
-              <dt>Seg - Sex</dt>
-              <dd>07:30 - 19:00</dd>
+
+          <aside class="hero-panel reveal" aria-label="Resumo da clínica">
+            <div class="hero-panel-top">
+              <img src="assets/backson-logo-transparent.png" alt="Clínica Backson" />
+              <span>Atendimento em português</span>
             </div>
-            <div>
-              <dt>Sábado</dt>
-              <dd>08:00 - 17:00</dd>
-            </div>
-            <div>
-              <dt>WhatsApp</dt>
-              <dd>+244 930 225 191</dd>
-            </div>
-          </dl>
+            <dl class="hero-metrics">
+              <div>
+                <dt>Seg-Sex</dt>
+                <dd>07:30-19:00</dd>
+              </div>
+              <div>
+                <dt>Sábado</dt>
+                <dd>08:00-17:00</dd>
+              </div>
+              <div>
+                <dt>Canal directo</dt>
+                <dd>WhatsApp</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
 
-      <section class="quick-strip" aria-label="Contactos principais">
-        <div class="container quick-grid">
-          <a class="quick-item" href="tel:+244930225181">
+      <section class="action-dock" aria-label="Acções principais">
+        <div class="container dock-grid">
+          <a class="dock-item reveal" href="tel:+244930225181">
             <span class="icon-badge">
               <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.9v2.7a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.3 19.3 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4 2 2 0 0 1 4.1 2h2.7a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.8 9.9a16 16 0 0 0 6.3 6.3l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7A2 2 0 0 1 22 16.9Z" /></svg>
             </span>
             <span>
-              <strong>Ligar para a clínica</strong>
+              <strong>Ligar agora</strong>
               <small>+244 930 225 181</small>
             </span>
           </a>
-          <a class="quick-item" data-whatsapp-default href="https://wa.me/244930225191" target="_blank" rel="noopener">
-            <span class="icon-badge icon-badge--leaf">
-              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5Z" /><path d="M8.8 8.8c.2 3.1 2.3 5.2 5.4 5.4l1.4-1.4" /></svg>
+          <a class="dock-item dock-item--strong reveal" href="#marcar">
+            <span class="icon-badge">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 2v3M16 2v3M3.5 9.5h17M6 5h12a2.5 2.5 0 0 1 2.5 2.5v10A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5v-10A2.5 2.5 0 0 1 6 5Z" /></svg>
             </span>
             <span>
-              <strong>Falar no WhatsApp</strong>
-              <small>Resposta directa da equipa</small>
+              <strong>Marcar consulta</strong>
+              <small>Pedido estruturado via WhatsApp</small>
             </span>
           </a>
-          <a class="quick-item" href="#contacto">
+          <a class="dock-item reveal" href="#contacto">
             <span class="icon-badge">
               <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" /><path d="M12 10.5h.01" /></svg>
             </span>
             <span>
               <strong>Rua Che Guevara</strong>
-              <small>Tombwa, Namibe - Angola</small>
+              <small>Tombwa, Namibe</small>
             </span>
           </a>
         </div>
@@ -120,195 +134,262 @@
 
       <section class="section about-section" aria-labelledby="about-title">
         <div class="container about-layout">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <p class="eyebrow">Sobre nós</p>
-            <h2 id="about-title">Cuidado organizado, claro e humano.</h2>
-          </div>
-          <div class="about-copy">
+            <h2 id="about-title">Uma clínica feita para reduzir incerteza.</h2>
             <p>
-              A Clínica Backson atende a comunidade de Tombwa com foco em prevenção, acompanhamento
-              clínico e orientação clara para cada paciente. O site foi desenhado para facilitar o
-              essencial: conhecer os serviços, encontrar contactos e pedir marcação sem fricção.
+              O atendimento começa antes da consulta: informação clara, canais directos e uma
+              experiência digital que ajuda o paciente a saber exactamente o próximo passo.
             </p>
-            <div class="value-grid">
-              <article>
-                <span>01</span>
-                <h3>Atendimento próximo</h3>
-                <p>Informação simples e canais directos para pacientes e famílias.</p>
-              </article>
-              <article>
-                <span>02</span>
-                <h3>Serviços sem preços fixos</h3>
-                <p>Os valores não são publicados, para permitir confirmação actualizada pela equipa.</p>
-              </article>
-              <article>
-                <span>03</span>
-                <h3>Marcação por WhatsApp</h3>
-                <p>O pedido de consulta chega com os dados essenciais já organizados.</p>
-              </article>
-            </div>
+          </div>
+
+          <div class="care-board reveal">
+            <article class="care-card care-card--image">
+              <img src="assets/service-general.png" alt="Médico a conversar com paciente num consultório moderno" loading="lazy" />
+            </article>
+            <article class="care-card">
+              <span>01</span>
+              <h3>Contacto sem fricção</h3>
+              <p>Telefone, WhatsApp e email organizados para resposta rápida da equipa.</p>
+            </article>
+            <article class="care-card care-card--dark">
+              <span>02</span>
+              <h3>Horários visíveis</h3>
+              <p>Segunda a sexta das 07:30 às 19:00 e sábado das 08:00 às 17:00.</p>
+            </article>
+            <article class="care-card">
+              <span>03</span>
+              <h3>Preços por confirmação</h3>
+              <p>Os valores não são publicados para que a equipa confirme a informação actualizada.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section services-section" id="servicos" aria-labelledby="services-title">
+      <section class="section services-section section-anchor" id="servicos" aria-labelledby="services-title">
         <div class="container">
-          <div class="section-heading section-heading--split">
+          <div class="section-heading section-heading--split reveal">
             <div>
               <p class="eyebrow">Serviços</p>
-              <h2 id="services-title">Os nossos serviços</h2>
+              <h2 id="services-title">Especialidades com uma presença mais humana.</h2>
             </div>
             <p>
-              Atendimento para consultas, acompanhamento e exames. Escolha um serviço para iniciar a
-              marcação pelo WhatsApp.
+              Cada cartão foi pensado para ser lido rapidamente: o que é, quanto tempo costuma
+              levar e a acção directa para iniciar a marcação.
             </p>
           </div>
 
           <div class="services-grid">
-            <article class="service-card" data-service-card="Consulta Geral">
-              <span class="service-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3v5a4 4 0 1 0 8 0V3M6 3h4M14 3h4M12 14v2a4 4 0 0 0 8 0v-2" /></svg>
-              </span>
-              <h3>Consulta Geral</h3>
-              <p>Avaliação clínica, orientação preventiva e acompanhamento de rotina.</p>
-              <div class="service-meta">
-                <span>30 - 45 min</span>
-                <span>Presencial</span>
+            <article class="service-card reveal" data-service-card="Consulta Geral">
+              <a class="service-image" href="#marcar" data-book-service="Consulta Geral" aria-label="Marcar Consulta Geral">
+                <img src="assets/service-general.png" alt="Consulta geral na Clínica Backson" loading="lazy" />
+                <span>Essencial</span>
+              </a>
+              <div class="service-content">
+                <div class="service-heading">
+                  <h3>Consulta Geral</h3>
+                  <span class="service-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3v5a4 4 0 1 0 8 0V3M6 3h4M14 3h4M12 14v2a4 4 0 0 0 8 0v-2" /></svg>
+                  </span>
+                </div>
+                <p>Avaliação clínica, orientação preventiva e acompanhamento de rotina.</p>
+                <div class="service-meta">
+                  <span>30-45 min</span>
+                  <span>Presencial</span>
+                </div>
+                <a class="text-link" href="#marcar" data-book-service="Consulta Geral">Marcar consulta</a>
               </div>
-              <a href="#marcar" data-book-service="Consulta Geral">Marcar Consulta</a>
             </article>
 
-            <article class="service-card" data-service-card="Pediatria">
-              <span class="service-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 10h.01M15 10h.01M9.5 15a4 4 0 0 0 5 0M12 3a7 7 0 0 0-7 7v2a7 7 0 0 0 14 0v-2a7 7 0 0 0-7-7Z" /></svg>
-              </span>
-              <h3>Pediatria</h3>
-              <p>Acompanhamento do crescimento e cuidado clínico para crianças.</p>
-              <div class="service-meta">
-                <span>30 - 45 min</span>
-                <span>Infantil</span>
+            <article class="service-card reveal" data-service-card="Pediatria">
+              <a class="service-image" href="#marcar" data-book-service="Pediatria" aria-label="Marcar Pediatria">
+                <img src="assets/service-pediatrics.png" alt="Consulta de pediatria em ambiente acolhedor" loading="lazy" />
+                <span>Família</span>
+              </a>
+              <div class="service-content">
+                <div class="service-heading">
+                  <h3>Pediatria</h3>
+                  <span class="service-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 10h.01M15 10h.01M9.5 15a4 4 0 0 0 5 0M12 3a7 7 0 0 0-7 7v2a7 7 0 0 0 14 0v-2a7 7 0 0 0-7-7Z" /></svg>
+                  </span>
+                </div>
+                <p>Acompanhamento do crescimento e cuidado clínico para crianças.</p>
+                <div class="service-meta">
+                  <span>30-45 min</span>
+                  <span>Infantil</span>
+                </div>
+                <a class="text-link" href="#marcar" data-book-service="Pediatria">Marcar consulta</a>
               </div>
-              <a href="#marcar" data-book-service="Pediatria">Marcar Consulta</a>
             </article>
 
-            <article class="service-card" data-service-card="Cardiologia">
-              <span class="service-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /><path d="M3.5 12h4l1.5-3 3 6 1.5-3h7" /></svg>
-              </span>
-              <h3>Cardiologia</h3>
-              <p>Avaliação e acompanhamento da saúde cardiovascular.</p>
-              <div class="service-meta">
-                <span>45 min</span>
-                <span>Especializado</span>
+            <article class="service-card reveal" data-service-card="Cardiologia">
+              <a class="service-image" href="#marcar" data-book-service="Cardiologia" aria-label="Marcar Cardiologia">
+                <img src="assets/service-cardiology.png" alt="Consulta de cardiologia com equipamento moderno" loading="lazy" />
+                <span>Especialidade</span>
+              </a>
+              <div class="service-content">
+                <div class="service-heading">
+                  <h3>Cardiologia</h3>
+                  <span class="service-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /><path d="M3.5 12h4l1.5-3 3 6 1.5-3h7" /></svg>
+                  </span>
+                </div>
+                <p>Avaliação e acompanhamento da saúde cardiovascular.</p>
+                <div class="service-meta">
+                  <span>45 min</span>
+                  <span>Coração</span>
+                </div>
+                <a class="text-link" href="#marcar" data-book-service="Cardiologia">Marcar consulta</a>
               </div>
-              <a href="#marcar" data-book-service="Cardiologia">Marcar Consulta</a>
             </article>
 
-            <article class="service-card" data-service-card="Exames de Laboratório">
-              <span class="service-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 2v6.5L4.8 18A3 3 0 0 0 7.4 22h9.2a3 3 0 0 0 2.6-4L14 8.5V2M8 2h8M7 16h10" /></svg>
-              </span>
-              <h3>Exames de Laboratório</h3>
-              <p>Análises clínicas e apoio diagnóstico com orientação da equipa.</p>
-              <div class="service-meta">
-                <span>15 - 30 min</span>
-                <span>Laboratório</span>
+            <article class="service-card reveal" data-service-card="Exames de Laboratório">
+              <a class="service-image" href="#marcar" data-book-service="Exames de Laboratório" aria-label="Marcar Exames de Laboratório">
+                <img src="assets/service-laboratory.png" alt="Laboratório clínico com equipamento de análise" loading="lazy" />
+                <span>Diagnóstico</span>
+              </a>
+              <div class="service-content">
+                <div class="service-heading">
+                  <h3>Exames de Laboratório</h3>
+                  <span class="service-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 2v6.5L4.8 18A3 3 0 0 0 7.4 22h9.2a3 3 0 0 0 2.6-4L14 8.5V2M8 2h8M7 16h10" /></svg>
+                  </span>
+                </div>
+                <p>Análises clínicas e apoio diagnóstico com orientação da equipa.</p>
+                <div class="service-meta">
+                  <span>15-30 min</span>
+                  <span>Laboratório</span>
+                </div>
+                <a class="text-link" href="#marcar" data-book-service="Exames de Laboratório">Marcar consulta</a>
               </div>
-              <a href="#marcar" data-book-service="Exames de Laboratório">Marcar Consulta</a>
             </article>
 
-            <article class="service-card" data-service-card="Estomatologia">
-              <span class="service-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8.5 3.5c1.4 0 2.2.7 3.5.7s2.1-.7 3.5-.7c2.2 0 4 1.9 4 4.5 0 3.5-2.2 5-3 9.1-.4 2-1.2 3.4-2.2 3.4-.9 0-1.1-1.9-2.3-1.9s-1.4 1.9-2.3 1.9c-1 0-1.8-1.4-2.2-3.4-.8-4.1-3-5.6-3-9.1 0-2.6 1.8-4.5 4-4.5Z" /></svg>
-              </span>
-              <h3>Estomatologia</h3>
-              <p>Cuidados de saúde oral, prevenção e tratamentos dentários.</p>
-              <div class="service-meta">
-                <span>45 - 60 min</span>
+            <article class="service-card reveal" data-service-card="Estomatologia">
+              <a class="service-image" href="#marcar" data-book-service="Estomatologia" aria-label="Marcar Estomatologia">
+                <img src="assets/service-dental.png" alt="Consultório de estomatologia moderno" loading="lazy" />
                 <span>Saúde oral</span>
+              </a>
+              <div class="service-content">
+                <div class="service-heading">
+                  <h3>Estomatologia</h3>
+                  <span class="service-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8.5 3.5c1.4 0 2.2.7 3.5.7s2.1-.7 3.5-.7c2.2 0 4 1.9 4 4.5 0 3.5-2.2 5-3 9.1-.4 2-1.2 3.4-2.2 3.4-.9 0-1.1-1.9-2.3-1.9s-1.4 1.9-2.3 1.9c-1 0-1.8-1.4-2.2-3.4-.8-4.1-3-5.6-3-9.1 0-2.6 1.8-4.5 4-4.5Z" /></svg>
+                  </span>
+                </div>
+                <p>Cuidados de saúde oral, prevenção e tratamentos dentários.</p>
+                <div class="service-meta">
+                  <span>45-60 min</span>
+                  <span>Dentário</span>
+                </div>
+                <a class="text-link" href="#marcar" data-book-service="Estomatologia">Marcar consulta</a>
               </div>
-              <a href="#marcar" data-book-service="Estomatologia">Marcar Consulta</a>
             </article>
 
-            <article class="service-card" data-service-card="Fisioterapia">
-              <span class="service-icon">
-                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM11 8l-3 4 3 2 3-2-1.5-2M7 22l2-6M15 22l-2-6M14 12h4l2-3" /></svg>
-              </span>
-              <h3>Fisioterapia</h3>
-              <p>Reabilitação, mobilidade e acompanhamento de recuperação funcional.</p>
-              <div class="service-meta">
-                <span>45 - 60 min</span>
-                <span>Reabilitação</span>
+            <article class="service-card reveal" data-service-card="Fisioterapia">
+              <a class="service-image" href="#marcar" data-book-service="Fisioterapia" aria-label="Marcar Fisioterapia">
+                <img src="assets/service-physio.png" alt="Sessão de fisioterapia e reabilitação" loading="lazy" />
+                <span>Recuperação</span>
+              </a>
+              <div class="service-content">
+                <div class="service-heading">
+                  <h3>Fisioterapia</h3>
+                  <span class="service-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM11 8l-3 4 3 2 3-2-1.5-2M7 22l2-6M15 22l-2-6M14 12h4l2-3" /></svg>
+                  </span>
+                </div>
+                <p>Reabilitação, mobilidade e acompanhamento de recuperação funcional.</p>
+                <div class="service-meta">
+                  <span>45-60 min</span>
+                  <span>Reabilitação</span>
+                </div>
+                <a class="text-link" href="#marcar" data-book-service="Fisioterapia">Marcar consulta</a>
               </div>
-              <a href="#marcar" data-book-service="Fisioterapia">Marcar Consulta</a>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section booking-section" id="marcar" aria-labelledby="booking-title">
+      <section class="section booking-section section-anchor" id="marcar" aria-labelledby="booking-title">
         <div class="container booking-layout">
-          <div class="booking-intro">
+          <div class="booking-intro reveal">
             <p class="eyebrow">Marcação</p>
-            <h2 id="booking-title">Peça a sua consulta em poucos passos.</h2>
+            <h2 id="booking-title">Um pedido limpo, pronto para a equipa confirmar.</h2>
             <p>
-              Escolha o serviço, indique a data preferida e envie o pedido directamente para o
-              WhatsApp oficial da Clínica Backson.
+              A marcação não guarda dados no site. Ela organiza as informações essenciais e abre uma
+              mensagem pré-preenchida no WhatsApp oficial da Clínica Backson.
             </p>
-            <div class="booking-note">
-              <strong>Horário de funcionamento</strong>
-              <span>Segunda a sexta, 07:30 - 19:00. Sábado, 08:00 - 17:00.</span>
-            </div>
+            <ul class="booking-assurances" aria-label="Detalhes da marcação">
+              <li>
+                <strong>01</strong>
+                <span>Escolha o serviço</span>
+              </li>
+              <li>
+                <strong>02</strong>
+                <span>Indique data e hora</span>
+              </li>
+              <li>
+                <strong>03</strong>
+                <span>Confirme no WhatsApp</span>
+              </li>
+            </ul>
           </div>
 
-          <form class="booking-panel" id="booking-form" novalidate>
+          <form class="booking-panel reveal" id="booking-form" novalidate>
+            <div class="booking-panel-header">
+              <div>
+                <span class="panel-kicker">Pedido de consulta</span>
+                <h3 data-step-title>Selecione o serviço</h3>
+              </div>
+              <span class="step-count" aria-live="polite"><span data-current-step>1</span>/4</span>
+            </div>
+
             <div class="stepper" aria-label="Progresso da marcação">
-              <span class="is-active" data-progress-step="1">1</span>
-              <span data-progress-step="2">2</span>
-              <span data-progress-step="3">3</span>
-              <span data-progress-step="4">4</span>
+              <span class="is-active" data-progress-step="1">Serviço</span>
+              <span data-progress-step="2">Agenda</span>
+              <span data-progress-step="3">Dados</span>
+              <span data-progress-step="4">Revisão</span>
             </div>
 
             <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
 
             <fieldset class="booking-step is-active" data-step="1">
-              <legend>Selecione o serviço</legend>
+              <legend class="sr-only">Selecione o serviço</legend>
               <div class="option-grid">
                 <label class="option-tile">
                   <input type="radio" name="service" value="Consulta Geral" />
                   <span>Consulta Geral</span>
-                  <small>Consulta de rotina e acompanhamento</small>
+                  <small>Acompanhamento de rotina</small>
                 </label>
                 <label class="option-tile">
                   <input type="radio" name="service" value="Pediatria" />
                   <span>Pediatria</span>
-                  <small>Cuidados especializados para crianças</small>
+                  <small>Cuidados para crianças</small>
                 </label>
                 <label class="option-tile">
                   <input type="radio" name="service" value="Cardiologia" />
                   <span>Cardiologia</span>
-                  <small>Avaliação da saúde do coração</small>
+                  <small>Saúde do coração</small>
                 </label>
                 <label class="option-tile">
                   <input type="radio" name="service" value="Exames de Laboratório" />
                   <span>Exames de Laboratório</span>
-                  <small>Análises clínicas completas</small>
+                  <small>Análises clínicas</small>
                 </label>
                 <label class="option-tile">
                   <input type="radio" name="service" value="Estomatologia" />
                   <span>Estomatologia</span>
-                  <small>Saúde oral e prevenção</small>
+                  <small>Saúde oral</small>
                 </label>
                 <label class="option-tile">
                   <input type="radio" name="service" value="Fisioterapia" />
                   <span>Fisioterapia</span>
-                  <small>Reabilitação e mobilidade</small>
+                  <small>Reabilitação</small>
                 </label>
               </div>
             </fieldset>
 
             <fieldset class="booking-step" data-step="2">
-              <legend>Escolha data e hora</legend>
+              <legend class="sr-only">Escolha data e hora</legend>
               <div class="date-time-grid">
                 <label class="field">
                   <span>Data preferida</span>
@@ -329,7 +410,7 @@
             </fieldset>
 
             <fieldset class="booking-step" data-step="3">
-              <legend>Os seus dados</legend>
+              <legend class="sr-only">Dados do paciente</legend>
               <div class="form-grid">
                 <label class="field">
                   <span>Nome completo</span>
@@ -347,7 +428,7 @@
             </fieldset>
 
             <section class="booking-step review-step" data-step="4" aria-labelledby="review-title">
-              <h3 id="review-title">Confirmar pedido</h3>
+              <h3 id="review-title">Revisão do pedido</h3>
               <dl class="review-list">
                 <div>
                   <dt>Serviço</dt>
@@ -390,17 +471,57 @@
         </div>
       </section>
 
-      <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
-        <div class="container">
-          <div class="section-heading section-heading--split">
-            <div>
-              <p class="eyebrow">Contacto</p>
-              <h2 id="contact-title">Estamos aqui por si.</h2>
-            </div>
-            <p>Use telefone, WhatsApp ou email para falar com a equipa da Clínica Backson.</p>
+      <section class="section trust-section section-anchor" id="confianca" aria-labelledby="trust-title">
+        <div class="container trust-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Confiança</p>
+            <h2 id="trust-title">Pequenos detalhes que fazem o atendimento parecer menos pesado.</h2>
+          </div>
+          <div class="testimonial-stack reveal">
+            <figure>
+              <blockquote>
+                Atendimento claro desde a recepção. A equipa explicou os próximos passos com calma.
+              </blockquote>
+              <figcaption>
+                <span>MS</span>
+                <strong>Paciente de consulta geral</strong>
+              </figcaption>
+            </figure>
+            <figure>
+              <blockquote>
+                Consegui falar pelo WhatsApp e confirmar o horário antes de sair de casa.
+              </blockquote>
+              <figcaption>
+                <span>AF</span>
+                <strong>Paciente em Tombwa</strong>
+              </figcaption>
+            </figure>
+            <figure>
+              <blockquote>
+                O espaço transmite limpeza, organização e confiança para levar a família.
+              </blockquote>
+              <figcaption>
+                <span>JL</span>
+                <strong>Familiar de paciente</strong>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section section-anchor" id="contacto" aria-labelledby="contact-title">
+        <div class="container contact-layout">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">Contacto</p>
+            <h2 id="contact-title">Estamos aqui por si.</h2>
+            <p>Use o canal que for mais confortável. O WhatsApp é o caminho mais directo para perguntas e marcações.</p>
+            <a class="button button--accent button--large" data-whatsapp-default href="https://wa.me/244930225191" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5Z" /><path d="M8.8 8.8c.2 3.1 2.3 5.2 5.4 5.4l1.4-1.4" /></svg>
+              Conversar no WhatsApp
+            </a>
           </div>
 
-          <div class="contact-grid">
+          <div class="contact-board reveal">
             <article class="contact-card contact-card--main">
               <h3>Informações de contacto</h3>
               <ul class="contact-list">
@@ -425,15 +546,15 @@
             </article>
 
             <article class="contact-card hours-card">
-              <h3>Horário de funcionamento</h3>
+              <h3>Horário</h3>
               <dl>
                 <div>
                   <dt>Segunda a sexta</dt>
-                  <dd>07:30 - 19:00</dd>
+                  <dd>07:30-19:00</dd>
                 </div>
                 <div>
                   <dt>Sábado</dt>
-                  <dd>08:00 - 17:00</dd>
+                  <dd>08:00-17:00</dd>
                 </div>
                 <div>
                   <dt>Domingo</dt>
@@ -442,49 +563,22 @@
               </dl>
             </article>
 
-            <article class="location-panel">
-              <div>
-                <p class="eyebrow">Localização</p>
-                <h3>Tombwa, Namibe</h3>
-                <p>Rua Che Guevara, com acesso directo para pacientes da zona urbana de Tombwa.</p>
+            <article class="map-card">
+              <div class="map-visual" aria-hidden="true">
+                <span></span>
               </div>
-              <a class="button button--secondary" href="https://www.google.com/maps/search/?api=1&query=Tombwa%2C%20Rua%20Che%20Guevara%2C%20Namibe%2C%20Angola" target="_blank" rel="noopener">
-                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" /><path d="M12 10.5h.01" /></svg>
-                Abrir mapa
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section trust-section" id="confianca" aria-labelledby="trust-title">
-        <div class="container trust-layout">
-          <div class="section-heading">
-            <p class="eyebrow">Confiança</p>
-            <h2 id="trust-title">O que orienta cada atendimento.</h2>
-          </div>
-          <div class="trust-grid">
-            <article>
-              <span>Higiene</span>
-              <h3>Ambiente limpo e organizado</h3>
-              <p>Espaços pensados para transmitir calma, segurança e conforto.</p>
-            </article>
-            <article>
-              <span>Clareza</span>
-              <h3>Informação fácil de entender</h3>
-              <p>Contacto directo para confirmar horários, disponibilidade e próximos passos.</p>
-            </article>
-            <article>
-              <span>Cuidado</span>
-              <h3>Atenção a cada paciente</h3>
-              <p>Marcações organizadas para reduzir espera e melhorar o acompanhamento.</p>
+              <div>
+                <h3>Rua Che Guevara</h3>
+                <p>Tombwa, Namibe - Angola</p>
+              </div>
+              <a class="text-link text-link--light" href="https://www.google.com/maps/search/?api=1&query=Tombwa%2C%20Rua%20Che%20Guevara%2C%20Namibe%2C%20Angola" target="_blank" rel="noopener">Abrir mapa</a>
             </article>
           </div>
         </div>
       </section>
 
       <section class="final-cta" aria-labelledby="cta-title">
-        <div class="container final-cta-inner">
+        <div class="container final-cta-inner reveal">
           <div>
             <p class="eyebrow">Clínica Backson</p>
             <h2 id="cta-title">Cuide da sua saúde hoje.</h2>
