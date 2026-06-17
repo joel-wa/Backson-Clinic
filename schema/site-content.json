@@ -29,37 +29,37 @@
   "services": [
     {
       "name": "Consulta Geral",
-      "description": "Avaliação clínica, orientação preventiva e acompanhamento de rotina.",
+      "description": "Consulta para avaliar sintomas, orientar cuidados preventivos e acompanhar a sua saúde no dia a dia.",
       "duration": "30 - 45 min",
       "mode": "Presencial"
     },
     {
       "name": "Pediatria",
-      "description": "Acompanhamento do crescimento e cuidado clínico para crianças.",
+      "description": "Cuidados para bebés e crianças, com acompanhamento do crescimento, sintomas e bem-estar familiar.",
       "duration": "30 - 45 min",
       "mode": "Infantil"
     },
     {
       "name": "Cardiologia",
-      "description": "Avaliação e acompanhamento da saúde cardiovascular.",
+      "description": "Avaliação da saúde do coração, acompanhamento de queixas e orientação para cuidados cardiovasculares.",
       "duration": "45 min",
       "mode": "Especializado"
     },
     {
       "name": "Exames de Laboratório",
-      "description": "Análises clínicas e apoio diagnóstico com orientação da equipa.",
+      "description": "Análises clínicas para apoiar o diagnóstico, acompanhar tratamentos e orientar os próximos passos.",
       "duration": "15 - 30 min",
       "mode": "Laboratório"
     },
     {
       "name": "Estomatologia",
-      "description": "Cuidados de saúde oral, prevenção e tratamentos dentários.",
+      "description": "Prevenção, avaliação e tratamentos de saúde oral para manter o seu sorriso saudável.",
       "duration": "45 - 60 min",
       "mode": "Saúde oral"
     },
     {
       "name": "Fisioterapia",
-      "description": "Reabilitação, mobilidade e acompanhamento de recuperação funcional.",
+      "description": "Acompanhamento para dores, mobilidade e recuperação funcional após lesões ou limitações físicas.",
       "duration": "45 - 60 min",
       "mode": "Reabilitação"
     }
@@ -68,7 +68,7 @@
     "whatsappTemplate": [
       "Olá, Clínica Backson!",
       "",
-      "Gostaria de marcar uma consulta com os seguintes detalhes:",
+      "Gostaria de solicitar uma marcação com os seguintes dados:",
       "Serviço: {service}",
       "Data: {date}",
       "Hora: {time}",
@@ -76,7 +76,7 @@
       "Telefone: {patientPhone}",
       "Notas: {notes}",
       "",
-      "Por favor, confirme a disponibilidade. Obrigado/a!"
+      "Por favor, confirmem a disponibilidade e qualquer orientação necessária. Obrigado/a!"
     ]
   }
 }

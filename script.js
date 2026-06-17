@@ -1,12 +1,12 @@
 const WHATSAPP_NUMBER = "244930225191";
 
 const defaultMessage =
-  "Olá, Clínica Backson. Gostaria de pedir informações sobre consultas.";
+  "Olá, Clínica Backson. Gostaria de receber orientação sobre consultas e horários disponíveis.";
 
 const stepTitles = {
   1: "Selecione o serviço",
-  2: "Escolha data e hora",
-  3: "Preencha os seus dados",
+  2: "Indique a sua preferência",
+  3: "Informe os seus dados",
   4: "Reveja e confirme",
 };
 
@@ -120,7 +120,7 @@ function buildBookingMessage() {
   return [
     "Olá, Clínica Backson!",
     "",
-    "Gostaria de marcar uma consulta com os seguintes detalhes:",
+    "Gostaria de solicitar uma marcação com os seguintes dados:",
     `Serviço: ${bookingState.service}`,
     `Data: ${formatDate(bookingState.date)}`,
     `Hora: ${bookingState.time}`,
@@ -128,7 +128,7 @@ function buildBookingMessage() {
     `Telefone: ${bookingState.patientPhone}`,
     `Notas: ${notes}`,
     "",
-    "Por favor, confirme a disponibilidade. Obrigado/a!",
+    "Por favor, confirmem a disponibilidade e qualquer orientação necessária. Obrigado/a!",
   ].join("\n");
 }
 
