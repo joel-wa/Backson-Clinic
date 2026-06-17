@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clínica Backson | Cuidados de Saúde em Tombwa</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fafaf4",
+                        "on-primary-fixed-variant": "#0b5229",
+                        "on-secondary-fixed": "#0d2000",
+                        "on-tertiary-fixed": "#191c1b",
+                        "surface-container-low": "#f4f4ee",
+                        "inverse-on-surface": "#f1f1ec",
+                        "surface-container": "#eeeee9",
+                        "on-secondary-container": "#3d7100",
+                        "tertiary-container": "#3e4140",
+                        "primary": "#003215",
+                        "surface-container-high": "#e8e8e3",
+                        "tertiary-fixed": "#e1e3e1",
+                        "inverse-surface": "#2f312e",
+                        "tertiary-fixed-dim": "#c5c7c5",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#93d6a0",
+                        "outline": "#707970",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fafaf4",
+                        "on-primary-fixed": "#00210c",
+                        "surface-container-highest": "#e3e3de",
+                        "on-surface-variant": "#404941",
+                        "primary-fixed": "#aef2bb",
+                        "surface-variant": "#e3e3de",
+                        "secondary-container": "#acf766",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#396a00",
+                        "on-primary-container": "#79bb87",
+                        "primary-container": "#004b23",
+                        "tertiary": "#282b2a",
+                        "secondary-fixed-dim": "#91da4d",
+                        "primary-fixed-dim": "#93d6a0",
+                        "on-secondary-fixed-variant": "#2a5000",
+                        "surface-tint": "#2a6a3f",
+                        "on-primary": "#ffffff",
+                        "background": "#fafaf4",
+                        "on-background": "#1a1c19",
+                        "outline-variant": "#c0c9be",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#acf766",
+                        "surface-dim": "#dadad5",
+                        "on-surface": "#1a1c19",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444746",
+                        "on-tertiary-container": "#aaadab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "margin-desktop": "48px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .ambient-shadow { box-shadow: 0 10px 20px -5px rgba(0, 75, 35, 0.04); }
+        .glass-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-background text-on-background smooth-scroll font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface/90 glass-header border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Clínica Backson</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 transition-colors" href="#">Início</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#services">Serviços</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#testimonials">Depoimentos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contacto</a>
+</nav>
+<button class="bg-primary-container text-on-primary hover:bg-primary transition-all px-6 py-3 rounded-full font-label-md text-label-md active:scale-95">
+            Marcar Consulta
+        </button>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center overflow-hidden bg-surface-bright">
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,#004b23_0%,transparent_50%)]"></div>
+</div>
+<div class="container mx-auto px-gutter relative z-10 flex flex-col md:flex-row items-center gap-stack-lg">
+<div class="w-full md:w-1/2 flex flex-col items-start gap-stack-md">
+<img alt="Logo Clínica Backson" class="w-64 h-auto mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqGDtn1NL5kR_dp3NgGk8uU0B_XE9rIVK3O1LN2cLQkrJN0GoA4RtoyNTYdKChaARnaNuV_Y33HMvskrxm8VNPUxya5SaobKDNSnE_Di6yEBiPYEhcowEfFEOyue0D62UWbxNH7KUzpLdlEJEfx_o31tKo4f6941x27XhaXCSchPTch8D_A2qmmlhkoCuMTCd_h9yCxJ84Wgl2BZv55Wn1g8ngUu38Ei2M2GAXkbEkixpfxFCm42eSJtKW0sazq5bSz5TCdSpSNBD3"/>
+<h1 class="font-display-lg text-display-lg text-primary max-w-xl md:text-display-lg sm:text-headline-lg-mobile">
+                        Clínica Backson
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Cuidar de você, é nossa missão. Oferecemos cuidados de saúde excepcionais com humanização e tecnologia de ponta em Tombwa.
+                    </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="bg-primary px-8 py-4 rounded-lg text-on-primary font-label-md text-label-md shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+                            Marcar Consulta
+                        </button>
+<button class="border border-primary text-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-primary/5 transition-all active:scale-95">
+                            Ver Nossos Serviços
+                        </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-square rounded-2xl overflow-hidden border border-outline-variant bg-white p-2">
+<img class="w-full h-full object-cover rounded-xl" data-alt="A modern, high-end medical clinic interior with pristine white walls, minimalist wooden accents, and soft, natural sunlight streaming through large windows. The reception area is impeccably clean and organized, featuring contemporary green botanical elements and professional healthcare staff in crisp uniforms. The atmosphere is calm, clinical, yet welcoming, utilizing the brand's professional green and white color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMf6vJHd_N1VrsHmgsW2Dr-UcuEvYr-vaMVmJqRZ6nx80gUSKwGw-YHqwlhy-zeoV5K73g_pN3503vGj6ANVlesXFm_KhsEmfSnCZ8Yy6_r96gONo-i5yV02vxbr8U03WiGf95wMfDW5MMnoHMRnRZRh4X8jekUN8fFWdSJ1AFonzjgw1MkdgXJtcoef05_AYg6h5ePhNA016kqrNHNjsbAIROmozalCRLWq2X7J15Z9sb4l354qugorEQc5hPsiUHKCA1jcrDn9-n"/>
+</div>
+<!-- Stats Floating Card -->
+<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl border border-outline-variant ambient-shadow hidden lg:block">
+<div class="flex items-center gap-3">
+<div class="bg-secondary-container p-3 rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container">verified</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-primary">15k+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Pacientes Atendidos</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section (Bento Grid Style) -->
+<section class="py-stack-lg bg-surface" id="about">
+<div class="container mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 bg-white p-8 rounded-2xl border border-outline-variant flex flex-col justify-center">
+<span class="text-secondary font-label-md text-label-md mb-2">Sobre Nós</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Excelência Médica em Tombwa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                            Localizada no coração de Tombwa, Angola, a Clínica Backson nasceu com o compromisso de transformar o acesso à saúde na região. Nossa infraestrutura foi desenhada para proporcionar conforto e segurança, seguindo rigorosos padrões internacionais de qualidade.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Contamos com uma equipe multidisciplinar dedicada e apaixonada por pessoas, pronta para oferecer diagnósticos precisos e tratamentos humanizados.
+                        </p>
+</div>
+<div class="md:col-span-4 bg-primary text-on-primary p-8 rounded-2xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl">local_hospital</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Sempre Próximos</h3>
+<p class="font-label-md text-label-md opacity-80">Rua da Independência, Tombwa, Namibe, Angola.</p>
+</div>
+</div>
+<!-- Opening Hours Bento Item -->
+<div class="md:col-span-12 lg:col-span-12 bg-white p-8 rounded-2xl border border-outline-variant flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container p-4 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">schedule</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Horário de Atendimento</h3>
+<p class="text-on-surface-variant">Planeie a sua visita com facilidade</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-8">
+<div class="text-center">
+<p class="font-label-md text-label-md text-secondary">Segunda a Sexta</p>
+<p class="font-headline-md text-headline-md text-primary">07:30 – 19:00</p>
+</div>
+<div class="w-px h-12 bg-outline-variant hidden md:block"></div>
+<div class="text-center">
+<p class="font-label-md text-label-md text-secondary">Sábados</p>
+<p class="font-headline-md text-headline-md text-primary">08:00 – 17:00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Preview Section -->
+<section class="py-stack-lg bg-surface-bright" id="services">
+<div class="container mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div class="max-w-xl">
+<span class="text-secondary font-label-md text-label-md">Especialidades</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Nossos Serviços Especializados</h2>
+</div>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 hover:underline" href="#">
+                        Ver todos os serviços <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Service Card 1 -->
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all duration-300 ambient-shadow">
+<div class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors">stethoscope</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Consulta Geral</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Acompanhamento clínico preventivo e diagnóstico para todas as fases da vida adulta.
+                        </p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                            Saiba Mais <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+<!-- Service Card 2 -->
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all duration-300 ambient-shadow">
+<div class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors">child_care</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Pediatria</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Cuidado especializado e lúdico para o crescimento saudável e feliz das suas crianças.
+                        </p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                            Saiba Mais <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+<!-- Service Card 3 -->
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all duration-300 ambient-shadow">
+<div class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors">female</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Ginecologia</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Saúde da mulher com atenção plena, exames preventivos e acompanhamento obstétrico.
+                        </p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                            Saiba Mais <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-stack-lg bg-surface" id="testimonials">
+<div class="container mx-auto px-gutter text-center mb-12">
+<span class="text-secondary font-label-md text-label-md">Depoimentos</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">O que nossos pacientes dizem</h2>
+</div>
+<div class="container mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant relative italic text-on-surface-variant">
+<span class="material-symbols-outlined absolute top-4 right-8 text-primary opacity-20 text-5xl">format_quote</span>
+<p class="mb-6 relative z-10">"Excelente atendimento desde a recepção até ao consultório. O médico foi muito atencioso e explicou tudo com clareza. Recomendo muito!"</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-fixed rounded-full flex items-center justify-center font-bold text-primary">MM</div>
+<div>
+<p class="font-label-md text-label-md text-primary not-italic">Maria Manuel</p>
+<p class="text-label-sm text-label-sm not-italic opacity-60">Paciente há 2 anos</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant relative italic text-on-surface-variant">
+<span class="material-symbols-outlined absolute top-4 right-8 text-primary opacity-20 text-5xl">format_quote</span>
+<p class="mb-6 relative z-10">"A melhor clínica em Tombwa. As instalações são muito limpas e modernas, e o atendimento de pediatria é fantástico com as crianças."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-fixed rounded-full flex items-center justify-center font-bold text-secondary">JS</div>
+<div>
+<p class="font-label-md text-label-md text-primary not-italic">João Silva</p>
+<p class="text-label-sm text-label-sm not-italic opacity-60">Pai de paciente</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant relative italic text-on-surface-variant">
+<span class="material-symbols-outlined absolute top-4 right-8 text-primary opacity-20 text-5xl">format_quote</span>
+<p class="mb-6 relative z-10">"Fiquei impressionado com a rapidez nos exames e a dedicação de toda a equipa técnica. Um serviço de saúde que Angola merece."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-full flex items-center justify-center font-bold text-on-primary">AF</div>
+<div>
+<p class="font-label-md text-label-md text-primary not-italic">António Fernandes</p>
+<p class="text-label-sm text-label-sm not-italic opacity-60">Paciente novo</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-lg container mx-auto px-gutter">
+<div class="bg-primary-container rounded-3xl p-12 text-center text-on-primary overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-6">Pronto para cuidar da sua saúde?</h2>
+<p class="font-body-lg text-body-lg mb-8 max-w-2xl mx-auto opacity-90">
+                        Não adie o seu bem-estar. Agende hoje mesmo a sua consulta com os nossos especialistas e garanta uma vida mais saudável.
+                    </p>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-xl font-headline-md text-headline-md hover:bg-secondary-fixed transition-all shadow-xl active:scale-95">
+                        Agendar Agora via WhatsApp
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary pt-20 pb-8">
+<div class="container mx-auto px-gutter max-w-container-max flex flex-col md:flex-row justify-between items-start gap-stack-md">
+<div class="flex flex-col gap-4 max-w-xs">
+<span class="font-headline-md text-headline-md text-on-primary">Clínica Backson</span>
+<p class="font-body-md text-body-md opacity-70">
+                    A sua referência em saúde em Tombwa. Excelência, ética e humanismo em cada atendimento.
+                </p>
+<div class="flex gap-4 mt-2">
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div>
+<p class="font-label-md text-label-md mb-4 uppercase tracking-wider opacity-60">Navegação</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md hover:underline underline-offset-4" href="#">Início</a></li>
+<li><a class="font-body-md text-body-md hover:underline underline-offset-4" href="#services">Serviços</a></li>
+<li><a class="font-body-md text-body-md hover:underline underline-offset-4" href="#about">Sobre Nós</a></li>
+<li><a class="font-body-md text-body-md hover:underline underline-offset-4" href="#contact">Trabalhe Conosco</a></li>
+</ul>
+</div>
+<div>
+<p class="font-label-md text-label-md mb-4 uppercase tracking-wider opacity-60">Jurídico</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md hover:underline underline-offset-4" href="#">Termos de Uso</a></li>
+<li><a class="font-body-md text-body-md hover:underline underline-offset-4" href="#">Política de Privacidade</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<p class="font-label-md text-label-md uppercase tracking-wider opacity-60">Contato</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">call</span>
+<span class="font-body-md text-body-md">+244 9XX XXX XXX</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">mail</span>
+<span class="font-body-md text-body-md">geral@backsonclinica.ao</span>
+</div>
+</div>
+</div>
+<div class="container mx-auto px-gutter mt-16 pt-8 border-t border-white/10 text-center md:text-left">
+<p class="font-label-sm text-label-sm opacity-60">© 2024 Clínica Backson - Tombwa, Angola. Todos os direitos reservados.</p>
+</div>
+</footer>
+<!-- FAB for WhatsApp -->
+<a class="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-40 hover:scale-110 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+<script>
+        // Small script for sticky header effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.remove('py-4');
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.remove('py-2');
+                header.classList.add('py-4');
+            }
+        });
+    </script>
+</body></html>

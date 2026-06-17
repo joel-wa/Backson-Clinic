@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto | Clínica Backson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fafaf4",
+                    "on-primary-fixed-variant": "#0b5229",
+                    "on-secondary-fixed": "#0d2000",
+                    "on-tertiary-fixed": "#191c1b",
+                    "surface-container-low": "#f4f4ee",
+                    "inverse-on-surface": "#f1f1ec",
+                    "surface-container": "#eeeee9",
+                    "on-secondary-container": "#3d7100",
+                    "tertiary-container": "#3e4140",
+                    "primary": "#003215",
+                    "surface-container-high": "#e8e8e3",
+                    "tertiary-fixed": "#e1e3e1",
+                    "inverse-surface": "#2f312e",
+                    "tertiary-fixed-dim": "#c5c7c5",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#93d6a0",
+                    "outline": "#707970",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fafaf4",
+                    "on-primary-fixed": "#00210c",
+                    "surface-container-highest": "#e3e3de",
+                    "on-surface-variant": "#404941",
+                    "primary-fixed": "#aef2bb",
+                    "surface-variant": "#e3e3de",
+                    "secondary-container": "#acf766",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#396a00",
+                    "on-primary-container": "#79bb87",
+                    "primary-container": "#004b23",
+                    "tertiary": "#282b2a",
+                    "secondary-fixed-dim": "#91da4d",
+                    "primary-fixed-dim": "#93d6a0",
+                    "on-secondary-fixed-variant": "#2a5000",
+                    "surface-tint": "#2a6a3f",
+                    "on-primary": "#ffffff",
+                    "background": "#fafaf4",
+                    "on-background": "#1a1c19",
+                    "outline-variant": "#c0c9be",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#acf766",
+                    "surface-dim": "#dadad5",
+                    "on-surface": "#1a1c19",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#444746",
+                    "on-tertiary-container": "#aaadab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "margin-desktop": "48px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .backdrop-blur-custom {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-primary">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="font-headline-md text-headline-md font-bold text-primary">Clínica Backson</div>
+<nav class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Início</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Serviços</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Depoimentos</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Contacto</a>
+</nav>
+<button class="bg-primary-container text-on-primary text-label-md font-label-md px-6 py-2.5 rounded-full hover:shadow-lg active:scale-95 transition-all">
+            Marcar Consulta
+        </button>
+</header>
+<main class="pt-24 pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Page Header -->
+<section class="py-stack-lg mb-stack-lg">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Estamos aqui por si</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Dúvidas ou agendamentos? A nossa equipa em Tombwa está pronta para lhe oferecer o melhor atendimento médico de Angola.
+            </p>
+</section>
+<!-- Main Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Contact Details Card -->
+<div class="md:col-span-7 bg-surface-container-lowest border border-outline-variant p-stack-lg rounded-xl flex flex-col gap-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary border-b border-outline-variant pb-4">Informações de Contacto</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-lg">
+<!-- Phone -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center rounded-lg text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Telefone</p>
+<a class="font-body-md text-body-md font-bold text-primary hover:underline" href="tel:+244930225181">+244 930 225 181</a>
+</div>
+</div>
+<!-- WhatsApp Detail -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-secondary-container/20 flex items-center justify-center rounded-lg text-secondary">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">WhatsApp</p>
+<a class="font-body-md text-body-md font-bold text-primary hover:underline" href="https://wa.me/244930225191">+244 930 225 191</a>
+</div>
+</div>
+<!-- Email -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center rounded-lg text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Email</p>
+<p class="font-body-md text-body-md font-bold text-primary">geral@clinicabackson.ao</p>
+</div>
+</div>
+<!-- Address -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-primary-container/10 flex items-center justify-center rounded-lg text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Localização</p>
+<p class="font-body-md text-body-md font-bold text-primary">Tombwa, Rua Che Guevara, Angola</p>
+</div>
+</div>
+</div>
+<!-- WhatsApp CTA -->
+<div class="mt-auto pt-stack-lg">
+<a class="group flex items-center justify-between bg-secondary text-on-secondary p-6 rounded-xl hover:bg-on-secondary-container transition-all shadow-sm" href="https://wa.me/244930225191">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<div>
+<p class="font-label-md text-label-md opacity-90">Resposta rápida via</p>
+<p class="font-headline-md text-headline-md">Conversar no WhatsApp</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Opening Hours Card -->
+<div class="md:col-span-5 bg-surface-container border border-outline-variant p-stack-lg rounded-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined">schedule</span>
+                    Horário de Funcionamento
+                </h2>
+<div class="space-y-4">
+<div class="flex justify-between py-3 border-b border-outline-variant/30">
+<span class="font-body-md text-on-surface-variant">Segunda - Sexta</span>
+<span class="font-label-md text-primary">08:00 - 18:00</span>
+</div>
+<div class="flex justify-between py-3 border-b border-outline-variant/30">
+<span class="font-body-md text-on-surface-variant">Sábado</span>
+<span class="font-label-md text-primary">09:00 - 13:00</span>
+</div>
+<div class="flex justify-between py-3 border-b border-outline-variant/30">
+<span class="font-body-md text-on-surface-variant">Domingo</span>
+<span class="font-label-md text-secondary font-bold">Encerrado</span>
+</div>
+<div class="flex justify-between py-3 border-b border-outline-variant/30">
+<span class="font-body-md text-on-surface-variant">Emergências</span>
+<span class="font-label-md text-error font-bold">24 Horas</span>
+</div>
+</div>
+<div class="mt-8 bg-surface-bright p-4 rounded-lg border border-outline-variant/50">
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+                        * Para atendimentos fora do horário normal, por favor utilize o nosso contacto de emergência ou dirija-se diretamente à clínica.
+                    </p>
+</div>
+</div>
+<!-- Full Width Map Section -->
+<div class="md:col-span-12 h-[450px] rounded-xl overflow-hidden relative shadow-sm border border-outline-variant">
+<div class="absolute inset-0 bg-surface-container-highest animate-pulse"></div>
+<iframe class="w-full h-full relative z-10" data-location="Tombwa, Namibe" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=pt&amp;q=Tombwa,%20Namibe,%20Angola+(Cl%C3%ADnica%20Backson)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+</iframe>
+<div class="absolute bottom-6 left-6 z-20 bg-surface/90 backdrop-blur-md p-4 rounded-lg shadow-xl border border-outline-variant max-w-sm hidden md:block">
+<h3 class="font-label-md text-label-md text-primary mb-1">Localização em Tombwa</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Rua Che Guevara, próximo à zona comercial. Estacionamento gratuito disponível para pacientes.</p>
+</div>
+</div>
+<!-- Visual Atmosphere Section -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter mt-stack-lg">
+<div class="aspect-video rounded-xl overflow-hidden relative">
+<img alt="Interior da Clínica" class="w-full h-full object-cover" data-alt="A brightly lit, modern hospital reception area with minimalist white furniture and soft green accents reflecting the Clínica Backson branding. Large glass windows allow natural light to flood the pristine space, creating a calm and professional atmosphere. The architecture is clinical yet welcoming, emphasizing hygiene and patient comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDByKjJULTT0OoK6qlm8LfYUVVgS3uLVF3-URyhJ_JmPJE5kY-w7uR3s99qkEo2vmpeH4oRnj1J6LABLhX4F67aPOE8y6PKbj1vJCddG4YPXtuMUcB1DWh9x7uzbbK1fS3V8-sQBTAkDbv4g3cl7Rty_F-LzGL_34zGgMP2jup9u2rqk0Z5Al3Cpt6f3pUGT2cEZpz9Kea10Inw8_8VOVEjbbOQzvBj3XPTmn_GFwBDu0-k8MJhq94DB-DH-YwsbS7Wvg7Oa1-JP9dB"/>
+</div>
+<div class="aspect-video rounded-xl overflow-hidden relative">
+<img alt="Equipa Médica" class="w-full h-full object-cover" data-alt="A professional healthcare provider in a clean white coat interacting kindly with a patient in a modern consultation room. The lighting is soft and high-key, highlighting the clean medical environment. The color palette is dominated by whites and soft greens, maintaining a corporate and reliable aesthetic that builds trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7eAqeqvv5NlpZskI7c4YArfsOKLi0CbDlcDjS_h9SpWdqrhowGI22TtSSAatUS2aZR3vyn5QtAntcn193kpAuFoIN9q9h7VghJLLkagQRe5_xezgvS-VTxMmJ5VUGblVrqdopC9ywH8RTlg-dimcl6jV8T0nYGfwFfanl9tntFyp80-6cauwoQdDnEF5eF0HLnFMf3GeZDgCEhK0aa8fiNIbLXGy_LdTNiEZyvRuE9h9cn0cj_4wVSk6Pa-TJRPZAdaKuMr67P1hM"/>
+</div>
+<div class="aspect-video rounded-xl overflow-hidden relative">
+<img alt="Equipamento" class="w-full h-full object-cover" data-alt="High-tech medical diagnostic equipment in a sterile, modern examination room at Clínica Backson. The surfaces are gleaming white, and the lighting is precise and bright. The overall mood is technologically advanced and ultra-clean, signifying top-tier healthcare services and diagnostic accuracy in a minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6I7ovlbHc69EjnnhNRQBsrktFKJf3eMlPn9xc8a2UL0-tINVY9HtRqkUsVbWWQnEPgvOnJsydD9mn_5wQICVgqAfwCmfWWbYAqTMwBUN80-ORjw6LBk8jeIgJjB8MDoz6a9bd4gix9fibJmotuYNFcebS1IhTBrL7qVQEw-aEezv4K7xR7JZ_KjIWrLYQkXbl6cx1y5pjrZUGd2zWGeH0nhFBJMuGwkR-bqil5GXGmu2pp87Jwgf8DfZhzJG-SutL0xof23Q8QJuV"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary mt-20">
+<div class="max-w-container-max mx-auto px-gutter py-stack-lg flex flex-col md:flex-row justify-between items-start gap-stack-md">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-on-primary font-bold">Clínica Backson</div>
+<p class="font-body-md text-body-md opacity-80 max-w-sm">Cuidar de você é nossa missão. Líderes em cuidados médicos de proximidade na província do Namibe.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-stack-md">
+<a class="opacity-80 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Termos de Uso</a>
+<a class="opacity-80 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Política de Privacidade</a>
+<a class="opacity-80 hover:opacity-100 transition-opacity text-label-sm font-label-sm" href="#">Trabalhe Conosco</a>
+</div>
+<p class="font-label-sm text-label-sm opacity-60 text-right">© 2024 Clínica Backson - Tombwa, Angola. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Floating Action Button (Responsive only for small screens) -->
+<a class="md:hidden fixed bottom-6 right-6 z-50 w-14 h-14 bg-secondary text-on-secondary rounded-full flex items-center justify-center shadow-2xl active:scale-90 transition-transform" href="https://wa.me/244930225191">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+<script>
+        // Simple intersection observer for subtle fade-in effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.grid > div').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

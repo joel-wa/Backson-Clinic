@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Serviços | Clínica Backson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fafaf4",
+                    "on-primary-fixed-variant": "#0b5229",
+                    "on-secondary-fixed": "#0d2000",
+                    "on-tertiary-fixed": "#191c1b",
+                    "surface-container-low": "#f4f4ee",
+                    "inverse-on-surface": "#f1f1ec",
+                    "surface-container": "#eeeee9",
+                    "on-secondary-container": "#3d7100",
+                    "tertiary-container": "#3e4140",
+                    "primary": "#003215",
+                    "surface-container-high": "#e8e8e3",
+                    "tertiary-fixed": "#e1e3e1",
+                    "inverse-surface": "#2f312e",
+                    "tertiary-fixed-dim": "#c5c7c5",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#93d6a0",
+                    "outline": "#707970",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fafaf4",
+                    "on-primary-fixed": "#00210c",
+                    "surface-container-highest": "#e3e3de",
+                    "on-surface-variant": "#404941",
+                    "primary-fixed": "#aef2bb",
+                    "surface-variant": "#e3e3de",
+                    "secondary-container": "#acf766",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#396a00",
+                    "on-primary-container": "#79bb87",
+                    "primary-container": "#004b23",
+                    "tertiary": "#282b2a",
+                    "secondary-fixed-dim": "#91da4d",
+                    "primary-fixed-dim": "#93d6a0",
+                    "on-secondary-fixed-variant": "#2a5000",
+                    "surface-tint": "#2a6a3f",
+                    "on-primary": "#ffffff",
+                    "background": "#fafaf4",
+                    "on-background": "#1a1c19",
+                    "outline-variant": "#c0c9be",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#acf766",
+                    "surface-dim": "#dadad5",
+                    "on-surface": "#1a1c19",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#444746",
+                    "on-tertiary-container": "#aaadab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "margin-desktop": "48px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #fafaf4;
+            color: #1a1c19;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #c0c9be;
+        }
+        .btn-interaction:active {
+            transform: scale(0.95);
+            transition: transform 150ms ease;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop py-4 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">Clínica Backson</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Início</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Serviços</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Depoimentos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>
+</nav>
+<button class="hidden md:block bg-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-md text-label-md btn-interaction">
+            Marcar Consulta
+        </button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<main class="pt-32 pb-20">
+<!-- Page Header -->
+<section class="max-w-container-max mx-auto px-6 md:px-margin-desktop mb-stack-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<nav class="flex items-center gap-2 text-on-surface-variant mb-4 font-label-sm text-label-sm">
+<span>Página</span>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+<span class="text-primary font-bold">Serviços</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-4">Os Nossos Serviços</h1>
+<p class="max-w-2xl text-on-surface-variant font-body-md text-body-md">
+                        Oferecemos um cuidado de saúde integral, combinando tecnologia de ponta com um atendimento profundamente humanizado. Explore as nossas especialidades desenhadas para o seu bem-estar.
+                    </p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline rounded-lg text-primary font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">filter_list</span> Filtrar
+                    </button>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: Check-up Geral -->
+<article class="glass-card rounded-xl p-stack-md flex flex-col h-full group hover:shadow-lg transition-all duration-300">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-stack-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional doctor in a bright, modern clinical setting performing a general health check-up. The lighting is soft and natural, emphasizing a clean and sterile medical environment. The color palette features soothing greens and crisp whites, creating a trustworthy and calm atmosphere for patients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsDkDljtPnWZCgPukSMWKe_66xbfb6q5EkMqb1Tda3_f2b6KKYSM-YiKkvqrVte3ciZI7QBtVC1uEmM7b9fV3xaYrieqCd56EF09Wq6bx8IaOnwFEG1I32Wbtk9gzO-TthzrlD6BDCesFmrs2RWTHYGwbSRDTPKXZgc7mPQGPpgG7fbABcNtmsVNux3yGrTe0r-Q-f9MbgXulO6CC4fNBs-cSU0COl0UwR3u3jA-K8R_4fEmzjVh72LRwX0-qWTWqMof9FwnDu8p-k"/>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> Essencial
+                        </div>
+</div>
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Check-up Geral</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                            Avaliação completa do seu estado de saúde para prevenção e detecção precoce de patologias, adaptada ao seu perfil clínico.
+                        </p>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>60-90 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">person_search</span>
+<span>Presencial</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-lg font-label-md text-label-md btn-interaction flex justify-center items-center gap-2 group-hover:bg-primary/90">
+                        Marcar Consulta
+                    </button>
+</article>
+<!-- Card 2: Análises Clínicas -->
+<article class="glass-card rounded-xl p-stack-md flex flex-col h-full group hover:shadow-lg transition-all duration-300">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-stack-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-tech laboratory setting where clinical analysis is conducted with precision. Modern equipment and glass test tubes are shown in a sterile, brightly lit space. The aesthetic is professional and corporate, using a palette of deep clinical greens and hospital whites to inspire confidence in diagnostic accuracy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Tlvjyw498Y7mviOgSCJIuRhG6hb4flrMy45f6aqg6OIxewm8dedOquubwsqtcrW5BXS5wNFwHeYkI5UGHFaqrvOaXCX61v-Z7S_GTv_NdjzTp9WHvVnbFenTYuFXcYmo2JipysrnE0zZwLPuhsSLLe6pzlpQaoN6II4JyeqkQ2PVD9luRcr4lnGcFGeBq6lqeKZUamRdQM1T6QvwWrPe69hxdeWR4L6qQxbkH7UQL3qNnbCrTL5LI6csw1JhP8KvUcWuVC2IfRQQ"/>
+</div>
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Análises Clínicas</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                            Laboratório de última geração para exames de sangue, urina e outros fluidos, com entrega rápida de resultados digitais.
+                        </p>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>15-30 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">biotech</span>
+<span>Laboratório</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-lg font-label-md text-label-md btn-interaction flex justify-center items-center gap-2 group-hover:bg-primary/90">
+                        Marcar Consulta
+                    </button>
+</article>
+<!-- Card 3: Fisioterapia -->
+<article class="glass-card rounded-xl p-stack-md flex flex-col h-full group hover:shadow-lg transition-all duration-300">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-stack-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A serene physiotherapy room featuring modern rehabilitation equipment and soft lighting. A therapist is assisting a patient in a way that conveys care and professionalism. The room is spacious with a clean minimalist design, emphasizing health, recovery, and a premium healthcare experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnuXIE4wo8SpBoxjtAoPlf6dR7KA5j3NdzyhfZXLSnD-t3FSV3R1YTjOPCURZuTcHt9vrVYqVZDsfZ_oVn0qVLLgHHDjneScdY4QaJ8XjH2GKokH-kT-a6ipqpNLQXIHyc0mjAWNZUmN99stApZtBT4GMZ6dprRR4QEY9JZmDQOHtNjuGoUq-af602yibwAD10ojtZxOtOqmKLYJpbhnGFfCOELnNV-eO0dspBnRLNOxc69cXulyaUIgksTRO2RIREuDGRyl8iSCZE"/>
+</div>
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Fisioterapia</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                            Reabilitação personalizada para lesões musculares, articulares e pós-operatórios com especialistas em medicina desportiva.
+                        </p>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>45-60 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">fitness_center</span>
+<span>Personalizado</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-lg font-label-md text-label-md btn-interaction flex justify-center items-center gap-2 group-hover:bg-primary/90">
+                        Marcar Consulta
+                    </button>
+</article>
+<!-- Card 4: Cardiologia -->
+<article class="glass-card rounded-xl p-stack-md flex flex-col h-full group hover:shadow-lg transition-all duration-300">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-stack-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sophisticated cardiology suite featuring high-resolution monitors displaying heart rhythms. The lighting is focused and professional, highlighting the advanced medical technology available. The overall style is clean and minimal, using a dark green and white color palette consistent with a modern corporate clinic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWjgMVI3lUv86Yp6M1WFvRTCqFMlTSL4TEmGRDgZQANg-UhcMqqhtsr81q6QFes3WX902etfdIGmtydU93VQAvwoS7BEPj2uya5qLFcKX8DwOgfSNApu11UgJRuRp4TEwkSJEDiKmTRKCXK5LUukpXSkPimL5gK6jACiXoHZQ4jBVBe1ZLxZU-hUqKQ7mwEfFzCekA0jPfUbZskOxykDpdSWdITt4H5pl9DAzz7qhEupvoIYNd0RbuAGDB2Zm5w4WVebpC4GAi7ai5"/>
+</div>
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Cardiologia</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                            Monitorização e tratamento de doenças cardiovasculares, incluindo eletrocardiogramas e ecocardiogramas de alta definição.
+                        </p>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>45 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<span>Especializado</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-lg font-label-md text-label-md btn-interaction flex justify-center items-center gap-2 group-hover:bg-primary/90">
+                        Marcar Consulta
+                    </button>
+</article>
+<!-- Card 5: Estomatologia -->
+<article class="glass-card rounded-xl p-stack-md flex flex-col h-full group hover:shadow-lg transition-all duration-300">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-stack-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern and bright dental office with ergonomic chairs and state-of-the-art tools. The room is filled with soft, warm light to put patients at ease. The design is sleek and minimalist, adhering to a high-end medical clinic aesthetic with white and emerald green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSr0kErwWWV3HAwOVjk1GyniCAEtr_88LfKxAKxjyxkcR9Br8je3zDLopfNI51Yz0xTLNDzVx4XZljbygwgAVB5XMpKU4Fnr4We7L1rhRhh69qqpl9oSUSrpiiUyKrG5G_W6wdKk-6Vff2CSSUJC8nY38ioShbaPHOFFAzlBdBccv4XsFOjJxt3qJ6h4qii_ydoXUwVsCx03288QMw9paVJKFaoENJ5IsV3klJn0kMIDZ5dDX2jDlUt1IzCaPuz_MVZhMfNbF1uMr2"/>
+</div>
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Estomatologia</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                            Cuidados integrais de saúde oral, desde a limpeza preventiva até tratamentos restauradores e estética dentária.
+                        </p>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>60 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">dentistry</span>
+<span>Estética</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-lg font-label-md text-label-md btn-interaction flex justify-center items-center gap-2 group-hover:bg-primary/90">
+                        Marcar Consulta
+                    </button>
+</article>
+<!-- Card 6: Pediatria -->
+<article class="glass-card rounded-xl p-stack-md flex flex-col h-full group hover:shadow-lg transition-all duration-300">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-stack-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A friendly and welcoming pediatric consultation room with subtle colorful accents in an otherwise clean, modern medical setting. The room is brightly lit with warm lighting, creating a safe and comfortable environment for children. The style remains professional and aligned with the clinic's premium green and white brand colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8gCpEWTs3RQ868k6eP6LAVNzgoD9Z63D_Rw9TB2Ga5WhqJ0iNInHwW-zB8duI6B3Y7COeZ1tvxliWH5l7Xz6wDM6R6YzRi-fy5O0SDFLpUfJQq6fCpWMww58lvcTGwcg9lrBI01wwjNj9zTVO6Jylo8Srl4r23vEW1wuBKF8M7Mb7CyMqbJquzw5ugfPXZd4zst6QtX-m6MiZu4_uF60gAuQbcWLbWas6vy61_SKgPL8oPi1TjLCmFgKfZ_D8qGuEmdFTrK8fuTe9"/>
+</div>
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Pediatria</h2>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                            Acompanhamento do crescimento e desenvolvimento infantil, com uma equipa dedicada a criar um ambiente seguro para os mais novos.
+                        </p>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>30-45 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">child_care</span>
+<span>Pediátrico</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-lg font-label-md text-label-md btn-interaction flex justify-center items-center gap-2 group-hover:bg-primary/90">
+                        Marcar Consulta
+                    </button>
+</article>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-20 max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<div class="bg-primary rounded-2xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative">
+<!-- Subtle graphic pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10 text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Precisa de um Serviço Especializado?</h2>
+<p class="text-on-primary-container font-body-lg text-body-lg max-w-xl opacity-90">
+                        A nossa equipa está disponível para o ajudar a encontrar o melhor plano de tratamento para as suas necessidades específicas.
+                    </p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full font-label-md text-label-md font-bold btn-interaction shadow-lg">
+                        Ligar Agora
+                    </button>
+<button class="bg-transparent border border-white text-white px-8 py-4 rounded-full font-label-md text-label-md btn-interaction">
+                        Ver Outros Serviços
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary py-stack-lg px-gutter border-t border-white/10">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-stack-md">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary text-2xl">health_metrics</span>
+<span class="font-headline-md text-headline-md text-on-primary font-bold">Clínica Backson</span>
+</div>
+<p class="text-on-primary opacity-80 font-body-md text-body-md max-w-xs">
+                    Cuidar de você é nossa missão. Medicina de excelência em Angola.
+                </p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<span class="text-on-primary font-bold font-label-md text-label-md uppercase tracking-wider">Legal</span>
+<a class="text-on-primary opacity-80 hover:opacity-100 transition-opacity font-label-sm text-label-sm" href="#">Termos de Uso</a>
+<a class="text-on-primary opacity-80 hover:opacity-100 transition-opacity font-label-sm text-label-sm" href="#">Política de Privacidade</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-on-primary font-bold font-label-md text-label-md uppercase tracking-wider">Clínica</span>
+<a class="text-on-primary opacity-80 hover:opacity-100 transition-opacity font-label-sm text-label-sm underline font-bold" href="#">Serviços</a>
+<a class="text-on-primary opacity-80 hover:opacity-100 transition-opacity font-label-sm text-label-sm" href="#">Equipa Médica</a>
+<a class="text-on-primary opacity-80 hover:opacity-100 transition-opacity font-label-sm text-label-sm" href="#">Trabalhe Conosco</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4">
+<p class="text-on-primary opacity-60 font-label-sm text-label-sm">© 2024 Clínica Backson - Tombwa, Angola. Todos os direitos reservados.</p>
+<div class="flex gap-6">
+<a class="text-on-primary opacity-60 hover:opacity-100 transition-opacity" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-on-primary opacity-60 hover:opacity-100 transition-opacity" href="#"><span class="material-symbols-outlined">chat</span></a>
+</div>
+</div>
+</footer>
+<!-- Back to Top FAB (Contextual for long services list) -->
+<button class="fixed bottom-8 right-8 bg-secondary-container text-on-secondary-container w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all opacity-0 translate-y-10 pointer-events-none z-40" id="backToTop">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+        // Simple back to top functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Add subtle hover tracking effect for cards
+        const cards = document.querySelectorAll('.glass-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

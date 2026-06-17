@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marcar Consulta | Clínica Backson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fafaf4",
+                        "on-primary-fixed-variant": "#0b5229",
+                        "on-secondary-fixed": "#0d2000",
+                        "on-tertiary-fixed": "#191c1b",
+                        "surface-container-low": "#f4f4ee",
+                        "inverse-on-surface": "#f1f1ec",
+                        "surface-container": "#eeeee9",
+                        "on-secondary-container": "#3d7100",
+                        "tertiary-container": "#3e4140",
+                        "primary": "#003215",
+                        "surface-container-high": "#e8e8e3",
+                        "tertiary-fixed": "#e1e3e1",
+                        "inverse-surface": "#2f312e",
+                        "tertiary-fixed-dim": "#c5c7c5",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#93d6a0",
+                        "outline": "#707970",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fafaf4",
+                        "on-primary-fixed": "#00210c",
+                        "surface-container-highest": "#e3e3de",
+                        "on-surface-variant": "#404941",
+                        "primary-fixed": "#aef2bb",
+                        "surface-variant": "#e3e3de",
+                        "secondary-container": "#acf766",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#396a00",
+                        "on-primary-container": "#79bb87",
+                        "primary-container": "#004b23",
+                        "tertiary": "#282b2a",
+                        "secondary-fixed-dim": "#91da4d",
+                        "primary-fixed-dim": "#93d6a0",
+                        "on-secondary-fixed-variant": "#2a5000",
+                        "surface-tint": "#2a6a3f",
+                        "on-primary": "#ffffff",
+                        "background": "#fafaf4",
+                        "on-background": "#1a1c19",
+                        "outline-variant": "#c0c9be",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#acf766",
+                        "surface-dim": "#dadad5",
+                        "on-surface": "#1a1c19",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444746",
+                        "on-tertiary-container": "#aaadab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "margin-desktop": "48px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .step-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        .hide { display: none; }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #004b23 !important;
+            box-shadow: 0 0 0 2px rgba(0, 75, 35, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (JSON Override: Search Hidden, Specific Links) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop py-4 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Clínica Backson</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Início</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Serviços</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Depoimentos</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all">
+            Marcar Consulta
+        </button>
+</header>
+<main class="flex-grow pt-28 pb-stack-lg px-margin-mobile md:px-0">
+<div class="max-w-4xl mx-auto">
+<!-- Progress Indicator -->
+<div class="mb-stack-lg px-gutter">
+<div class="flex justify-between items-center relative">
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-surface-container-highest -z-10"></div>
+<div class="absolute top-1/2 left-0 h-[2px] bg-primary transition-all duration-500 -z-10" id="progress-bar" style="width: 0%"></div>
+<div class="step-indicator flex flex-col items-center gap-2" data-step="1">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-bold transition-colors">1</div>
+<span class="font-label-sm text-label-sm hidden md:block">Serviço</span>
+</div>
+<div class="step-indicator flex flex-col items-center gap-2" data-step="2">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-bold transition-colors">2</div>
+<span class="font-label-sm text-label-sm hidden md:block">Data e Hora</span>
+</div>
+<div class="step-indicator flex flex-col items-center gap-2" data-step="3">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-bold transition-colors">3</div>
+<span class="font-label-sm text-label-sm hidden md:block">Dados</span>
+</div>
+<div class="step-indicator flex flex-col items-center gap-2" data-step="4">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-bold transition-colors">4</div>
+<span class="font-label-sm text-label-sm hidden md:block">Confirmar</span>
+</div>
+</div>
+</div>
+<!-- Wizard Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+<!-- Step 1: Select Service -->
+<div class="wizard-step p-gutter" id="step-1">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Selecione o Serviço</h2>
+<p class="text-on-surface-variant mb-gutter">Escolha a especialidade ou o tipo de exame que deseja realizar.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<label class="relative flex items-center p-4 border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-container-low transition-all group">
+<input class="sr-only peer" name="service" type="radio" value="Clínica Geral"/>
+<div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-primary-container mr-4">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md">Clínica Geral</h3>
+<p class="text-on-surface-variant text-sm">Consulta de rotina e acompanhamento.</p>
+</div>
+<div class="peer-checked:flex hidden absolute right-4 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</label>
+<label class="relative flex items-center p-4 border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-container-low transition-all group">
+<input class="sr-only peer" name="service" type="radio" value="Pediatria"/>
+<div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-primary-container mr-4">
+<span class="material-symbols-outlined">child_care</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md">Pediatria</h3>
+<p class="text-on-surface-variant text-sm">Cuidados especializados para crianças.</p>
+</div>
+<div class="peer-checked:flex hidden absolute right-4 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</label>
+<label class="relative flex items-center p-4 border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-container-low transition-all group">
+<input class="sr-only peer" name="service" type="radio" value="Cardiologia"/>
+<div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-primary-container mr-4">
+<span class="material-symbols-outlined">monitor_heart</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md">Cardiologia</h3>
+<p class="text-on-surface-variant text-sm">Avaliação e saúde do coração.</p>
+</div>
+<div class="peer-checked:flex hidden absolute right-4 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</label>
+<label class="relative flex items-center p-4 border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-container-low transition-all group">
+<input class="sr-only peer" name="service" type="radio" value="Exames de Laboratório"/>
+<div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-primary-container mr-4">
+<span class="material-symbols-outlined">biotech</span>
+</div>
+<div class="flex-grow">
+<h3 class="font-label-md text-label-md">Exames de Laboratório</h3>
+<p class="text-on-surface-variant text-sm">Análises clínicas completas.</p>
+</div>
+<div class="peer-checked:flex hidden absolute right-4 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Step 2: Date & Time -->
+<div class="wizard-step p-gutter hide" id="step-2">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Escolha a Data e Hora</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Calendar Placeholder -->
+<div class="bg-surface p-4 rounded-xl border border-outline-variant">
+<div class="flex justify-between items-center mb-4">
+<button class="p-1 hover:bg-surface-container rounded-full transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-label-md text-label-md">Outubro 2024</span>
+<button class="p-1 hover:bg-surface-container rounded-full transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-xs font-bold text-on-surface-variant">D</span>
+<span class="text-xs font-bold text-on-surface-variant">S</span>
+<span class="text-xs font-bold text-on-surface-variant">T</span>
+<span class="text-xs font-bold text-on-surface-variant">Q</span>
+<span class="text-xs font-bold text-on-surface-variant">Q</span>
+<span class="text-xs font-bold text-on-surface-variant">S</span>
+<span class="text-xs font-bold text-on-surface-variant">S</span>
+</div>
+<div class="grid grid-cols-7 gap-1">
+<!-- Days -->
+<div class="h-10 flex items-center justify-center text-sm opacity-20">29</div>
+<div class="h-10 flex items-center justify-center text-sm opacity-20">30</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">1</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">2</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">3</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">4</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">5</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer bg-primary text-on-primary rounded-lg font-bold">6</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">7</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">8</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">9</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">10</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">11</div>
+<div class="h-10 flex items-center justify-center text-sm cursor-pointer hover:bg-primary-container/10 rounded-lg">12</div>
+<!-- ... more days -->
+</div>
+</div>
+<!-- Time Slots -->
+<div class="space-y-4">
+<span class="font-label-md text-label-md block mb-2">Horários Disponíveis</span>
+<div class="grid grid-cols-2 gap-stack-sm">
+<button class="time-slot border border-outline-variant py-3 px-4 rounded-lg text-sm hover:border-primary hover:bg-surface-container-low transition-all">08:00</button>
+<button class="time-slot border border-outline-variant py-3 px-4 rounded-lg text-sm hover:border-primary hover:bg-surface-container-low transition-all">09:30</button>
+<button class="time-slot border border-outline-variant py-3 px-4 rounded-lg text-sm hover:border-primary hover:bg-surface-container-low transition-all bg-primary text-on-primary font-bold">11:00</button>
+<button class="time-slot border border-outline-variant py-3 px-4 rounded-lg text-sm hover:border-primary hover:bg-surface-container-low transition-all">14:00</button>
+<button class="time-slot border border-outline-variant py-3 px-4 rounded-lg text-sm hover:border-primary hover:bg-surface-container-low transition-all">15:30</button>
+<button class="time-slot border border-outline-variant py-3 px-4 rounded-lg text-sm hover:border-primary hover:bg-surface-container-low transition-all">17:00</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Patient Details -->
+<div class="wizard-step p-gutter hide" id="step-3">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Seus Dados</h2>
+<div class="grid grid-cols-1 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="name">Nome Completo</label>
+<input class="w-full border border-outline-variant bg-surface-container-lowest px-4 py-3 rounded-lg focus:ring-0" id="name" placeholder="Ex: Maria dos Santos" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="phone">Telemóvel / WhatsApp</label>
+<input class="w-full border border-outline-variant bg-surface-container-lowest px-4 py-3 rounded-lg focus:ring-0" id="phone" placeholder="+244 9XX XXX XXX" type="tel"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="notes">Notas ou Sintomas (Opcional)</label>
+<textarea class="w-full border border-outline-variant bg-surface-container-lowest px-4 py-3 rounded-lg focus:ring-0" id="notes" placeholder="Descreva brevemente o motivo da sua consulta..." rows="4"></textarea>
+</div>
+</div>
+</div>
+<!-- Step 4: Review & Confirm -->
+<div class="wizard-step p-gutter hide" id="step-4">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Revisão</h2>
+<p class="text-on-surface-variant mb-gutter">Confirme se as informações estão corretas antes de finalizar.</p>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant space-y-4">
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="text-on-surface-variant font-label-sm">Serviço</span>
+<span class="font-bold text-primary" id="summary-service">Clínica Geral</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="text-on-surface-variant font-label-sm">Data &amp; Hora</span>
+<span class="font-bold text-primary" id="summary-datetime">06 Outubro, 11:00</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="text-on-surface-variant font-label-sm">Paciente</span>
+<span class="font-bold text-primary" id="summary-patient">Maria dos Santos</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant font-label-sm">Telemóvel</span>
+<span class="font-bold text-primary" id="summary-phone">+244 923 000 000</span>
+</div>
+</div>
+<div class="mt-gutter flex flex-col md:flex-row gap-4">
+<button class="flex-1 bg-primary text-on-primary py-4 rounded-xl font-label-md text-label-md shadow-sm hover:opacity-90 active:scale-95 transition-all" onclick="goToStep(5)">Confirmar Agendamento</button>
+<button class="flex-1 border-2 border-secondary text-secondary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-secondary/5 transition-all">
+<span class="material-symbols-outlined">chat</span>
+                            Confirmar via WhatsApp
+                        </button>
+</div>
+</div>
+<!-- Step 5: Success Screen -->
+<div class="wizard-step p-gutter text-center hide" id="step-5">
+<div class="w-20 h-20 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mx-auto mb-gutter">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm">Consulta Agendada!</h2>
+<p class="text-on-surface-variant mb-stack-lg">Seu agendamento foi recebido com sucesso. Em breve entraremos em contacto para confirmação final.</p>
+<div class="bg-surface-container-low p-gutter rounded-xl mb-gutter max-w-sm mx-auto">
+<span class="text-on-surface-variant font-label-sm block mb-1">Número de Referência</span>
+<span class="font-display-lg text-primary text-2xl">#BCK-2024-9182</span>
+</div>
+<div class="space-y-4">
+<a class="block w-full py-4 text-primary font-bold hover:underline" href="#">Voltar ao Início</a>
+<p class="text-label-sm text-on-surface-variant">Dúvidas? <a class="text-secondary font-bold" href="#">Fale conosco pelo WhatsApp</a></p>
+</div>
+</div>
+<!-- Navigation Controls -->
+<div class="p-gutter border-t border-outline-variant flex justify-between bg-surface-container-lowest" id="wizard-nav">
+<button class="text-on-surface-variant font-label-md flex items-center gap-2 hover:text-primary transition-colors invisible" id="prev-btn" onclick="prevStep()">
+<span class="material-symbols-outlined">arrow_back</span> Anterior
+                    </button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md flex items-center gap-2 hover:opacity-90 transition-all" id="next-btn" onclick="nextStep()">
+                        Próximo <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary mt-auto">
+<div class="max-w-container-max mx-auto px-gutter py-stack-lg flex flex-col md:flex-row justify-between items-start gap-stack-md">
+<div class="max-w-xs">
+<span class="font-headline-md text-headline-md text-on-primary block mb-stack-sm">Clínica Backson</span>
+<p class="text-body-md opacity-80 text-sm">Cuidar de você é nossa missão. Oferecemos o que há de melhor em saúde e tecnologia médica no Tombwa.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter">
+<div class="space-y-2">
+<span class="font-label-md text-label-md text-on-primary">Suporte</span>
+<a class="block text-body-md opacity-80 hover:opacity-100 transition-opacity text-sm" href="#">Termos de Uso</a>
+<a class="block text-body-md opacity-80 hover:opacity-100 transition-opacity text-sm" href="#">Política de Privacidade</a>
+</div>
+<div class="space-y-2">
+<span class="font-label-md text-label-md text-on-primary">Comunidade</span>
+<a class="block text-body-md opacity-80 hover:opacity-100 transition-opacity text-sm" href="#">Trabalhe Conosco</a>
+<a class="block text-body-md opacity-80 hover:opacity-100 transition-opacity text-sm" href="#">Feedback de Pacientes</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 py-6 px-gutter text-center">
+<p class="text-label-sm opacity-60 text-xs">© 2024 Clínica Backson - Tombwa, Angola. Todos os direitos reservados.</p>
+</div>
+</footer>
+<script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function updateUI() {
+            // Steps visibility
+            document.querySelectorAll('.wizard-step').forEach(step => step.classList.add('hide'));
+            const activeStepEl = document.getElementById(`step-${currentStep}`);
+            if (activeStepEl) activeStepEl.classList.remove('hide');
+
+            // Progress Indicators
+            document.querySelectorAll('.step-indicator').forEach(indicator => {
+                const stepNum = parseInt(indicator.dataset.step);
+                const circle = indicator.querySelector('div');
+                
+                if (stepNum < currentStep) {
+                    circle.className = "w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-on-primary font-bold transition-colors";
+                    circle.innerHTML = `<span class="material-symbols-outlined">check</span>`;
+                } else if (stepNum === currentStep) {
+                    circle.className = "w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-bold transition-colors";
+                    circle.innerHTML = stepNum;
+                } else {
+                    circle.className = "w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-bold transition-colors";
+                    circle.innerHTML = stepNum;
+                }
+            });
+
+            // Progress Bar
+            const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+
+            // Navigation Buttons
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const nav = document.getElementById('wizard-nav');
+
+            if (currentStep === 1) prevBtn.classList.add('invisible');
+            else prevBtn.classList.remove('invisible');
+
+            if (currentStep === 4) {
+                nav.classList.add('hide');
+            } else if (currentStep === 5) {
+                nav.classList.add('hide');
+            } else {
+                nav.classList.remove('hide');
+            }
+
+            // Sync Summary
+            if (currentStep === 4) {
+                const service = document.querySelector('input[name="service"]:checked')?.value || 'Não selecionado';
+                const name = document.getElementById('name').value || 'Não preenchido';
+                const phone = document.getElementById('phone').value || 'Não preenchido';
+                
+                document.getElementById('summary-service').innerText = service;
+                document.getElementById('summary-patient').innerText = name;
+                document.getElementById('summary-phone').innerText = phone;
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function goToStep(step) {
+            currentStep = step;
+            updateUI();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize slots
+        document.querySelectorAll('.time-slot').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('bg-primary', 'text-on-primary', 'font-bold'));
+                btn.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+            });
+        });
+    </script>
+</body></html>
