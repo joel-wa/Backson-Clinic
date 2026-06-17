@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Clinica Backson">
+  <rect width="64" height="64" rx="14" fill="#003d1a"/>
+  <path d="M17 19c9 5 14 12 15 27 6-17 12-25 24-33-7 18-16 31-24 39-8-8-13-17-15-33Z" fill="#70b62c"/>
+  <path d="M15 20c11 4 18 11 23 24-8-5-16-9-26-11 0-5 1-9 3-13Z" fill="#fff" opacity=".94"/>
+  <circle cx="31" cy="16" r="7" fill="#fff"/>
+</svg>

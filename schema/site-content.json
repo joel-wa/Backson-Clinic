@@ -1,0 +1,70 @@
+{
+  "clinic": {
+    "name": "Clínica Backson",
+    "tagline": "Cuidar de você é a nossa missão.",
+    "language": "pt-AO",
+    "address": "Tombwa, Rua Che Guevara, Namibe - Angola",
+    "phone": "+244 930 225 181",
+    "whatsapp": "+244 930 225 191",
+    "whatsappNumber": "244930225191",
+    "emails": ["clinicabeckson@gmail.com", "consultoriobeckson@gmail.com"],
+    "hours": [
+      { "label": "Segunda a sexta", "value": "07:30 - 19:00" },
+      { "label": "Sábado", "value": "08:00 - 17:00" },
+      { "label": "Domingo", "value": "Encerrado" }
+    ]
+  },
+  "services": [
+    {
+      "name": "Consulta Geral",
+      "description": "Avaliação clínica, orientação preventiva e acompanhamento de rotina.",
+      "duration": "30 - 45 min",
+      "mode": "Presencial"
+    },
+    {
+      "name": "Pediatria",
+      "description": "Acompanhamento do crescimento e cuidado clínico para crianças.",
+      "duration": "30 - 45 min",
+      "mode": "Infantil"
+    },
+    {
+      "name": "Cardiologia",
+      "description": "Avaliação e acompanhamento da saúde cardiovascular.",
+      "duration": "45 min",
+      "mode": "Especializado"
+    },
+    {
+      "name": "Exames de Laboratório",
+      "description": "Análises clínicas e apoio diagnóstico com orientação da equipa.",
+      "duration": "15 - 30 min",
+      "mode": "Laboratório"
+    },
+    {
+      "name": "Estomatologia",
+      "description": "Cuidados de saúde oral, prevenção e tratamentos dentários.",
+      "duration": "45 - 60 min",
+      "mode": "Saúde oral"
+    },
+    {
+      "name": "Fisioterapia",
+      "description": "Reabilitação, mobilidade e acompanhamento de recuperação funcional.",
+      "duration": "45 - 60 min",
+      "mode": "Reabilitação"
+    }
+  ],
+  "booking": {
+    "whatsappTemplate": [
+      "Olá, Clínica Backson!",
+      "",
+      "Gostaria de marcar uma consulta com os seguintes detalhes:",
+      "Serviço: {service}",
+      "Data: {date}",
+      "Hora: {time}",
+      "Nome: {patientName}",
+      "Telefone: {patientPhone}",
+      "Notas: {notes}",
+      "",
+      "Por favor, confirme a disponibilidade. Obrigado/a!"
+    ]
+  }
+}
